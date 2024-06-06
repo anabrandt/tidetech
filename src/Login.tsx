@@ -5,7 +5,7 @@ import { Botao } from './componentes/Botao';
 import { EntradaTexto } from './componentes/EntradaTexto';
 import { Titulo } from './componentes/Titulo';
 
-export default function Login() {
+export default function Login({ navigation }) {
   return (
     <VStack flex={1} alignItems="center" p={5} justifyContent="center">
       <Image source={Logo} alt="Logo TideTech"/>
@@ -25,8 +25,7 @@ export default function Login() {
         />
       </Box>
 
-      <Botao>Entrar</Botao>
-
+      <Botao onPress={() => navigation.navigate ('Tabs')} >Entrar</Botao>
 
       <Link href='https://www2.fiap.com.br/Aluno/EsqueciSenha' mt={2}>
       Esqueceu sua senha?
@@ -34,7 +33,7 @@ export default function Login() {
 
       <Box w="100%" flexDirection="row" justifyContent="center" mt={8}>
                 <Text>Ainda não tem cadastro? </Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
                     <Text color="blue.500">
                         Faça seu cadastro!
                     </Text>
