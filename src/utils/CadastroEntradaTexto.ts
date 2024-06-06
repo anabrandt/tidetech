@@ -1,5 +1,3 @@
-
-
 const secoes = [
     {
       id: 1,

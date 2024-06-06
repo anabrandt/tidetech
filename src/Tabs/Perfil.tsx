@@ -10,7 +10,7 @@ export default function Perfil(){
 
                 <Titulo color="blue.500">Meu perfil</Titulo>
 
-                <Avatar source={Basquiat} mt={5} />
+                <Avatar size="xl" source={Basquiat} mt={5} />
                 <Titulo color="blue.500">Informações pessoais</Titulo>
                 <Titulo fontSize="lg" mb={1}>Jean Michel Basquiat</Titulo>
                 <Text>17/02/2004</Text>
