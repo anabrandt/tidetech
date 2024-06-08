@@ -6,7 +6,7 @@ import { Titulo } from './componentes/Titulo';
 import { useState } from 'react';
 import { secoes } from './utils/CadastroEntradaTexto'
 
-export default function Cadastro() {
+export default function Cadastro({ navigation }) {
   const [numSecao, setNumSecao] = useState(0);
 
 
@@ -30,26 +30,24 @@ export default function Cadastro() {
         {secoes[numSecao].titulo}
       </Titulo>
       <Box>
-        {secoes[numSecao].entradaTexto &&
-          secoes[numSecao].entradaTexto.map(entrada => (
-            <EntradaTexto
-              label={entrada.label}
-              placeholder={entrada.placeholder}
-              key={entrada.id}
-            />
-          ))}
+        {
+          secoes[numSecao]?.entradaTexto?.map(entrada => {
+            return <EntradaTexto label={entrada.label} placeholder={entrada.placeholder} key={entrada.id} />
+          })
+        }
       </Box>
 
       <Box>
         <Text color="blue.800" fontWeight="bold" fontSize="md" mt={2}>
           Selecione a atividade:
         </Text>
-        {secoes[numSecao].checkbox &&
-          secoes[numSecao].checkbox.map(checkbox => (
-            <Checkbox key={checkbox.id} value={checkbox.value}>
+        {
+          secoes[numSecao].checkbox.map(checkbox => {
+            return <Checkbox key={checkbox.id} value={checkbox.value}>
               {checkbox.value}
             </Checkbox>
-          ))}
+          })
+        }
       </Box>
 
       {numSecao > 0 && (
